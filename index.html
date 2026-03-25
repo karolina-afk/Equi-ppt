@@ -46,7 +46,7 @@
         #deck {
             width: 1280px;
             height: 720px;
-            background-color: #FFFFFF;
+            background-color: #E8E8E8;
             position: absolute;
             left: 50%;
             top: 50%;
@@ -58,7 +58,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
         }
 
-        .slide { display: none; width: 100%; height: 100%; position: absolute; inset: 0; background: #FFFFFF; flex-direction: column; padding: 50px 80px; }
+        .slide { display: none; width: 100%; height: 100%; position: absolute; inset: 0; background: #E8E8E8; flex-direction: column; padding: 50px 80px; }
         .slide.active { display: flex; }
         
         /* Universal Header Styling */
@@ -67,7 +67,7 @@
         .slide-line { width: 100%; height: 4px; background-color: #FF285A; flex-shrink: 0; }
         
         /* Content & Logo Protection Zone */
-        .slide-content { flex: 1; width: 100%; min-height: 0; display: flex; gap: 24px; padding-bottom: 50px; }
+        .slide-content { flex: 1; width: 100%; min-height: 0; display: flex; gap: 24px; padding-bottom: 40px; }
         .logo-anchor { position: absolute; bottom: 30px; left: 80px; font-size: 24px; font-weight: 700; letter-spacing: -0.05em; color: #000000; z-index: 50; }
         
         /* Unified Typography Classes */
@@ -75,14 +75,8 @@
         .body-text { font-size: 14px; line-height: 1.5; color: #374151; }
         .small-text { font-size: 13px; line-height: 1.4; color: #4B5563; }
 
-        /* Unified Standard Card Design - NO SHADOWS */
-        .axia-card { background-color: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; }
-        
-        /* Slide 9 Specifics */
-        .photo-quote-container { position: relative; height: 120px; border-radius: 12px; overflow: hidden; border: 1px solid #D1D5DB; flex-shrink: 0; margin-bottom: 12px; }
-        .photo-bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: brightness(0.4) saturate(1.2); }
-        .quote-overlay { position: relative; height: 100%; display: flex; align-items: center; justify-content: center; padding: 16px; flex-direction: column; }
-        .quote-text { color: white; font-weight: 700; font-size: 13px; text-align: center; line-height: 1.4; font-style: italic; margin-top: 4px; }
+        /* Unified Standard Card Design - Crisp Flat Design */
+        .axia-card { background-color: #FFFFFF; border: 1px solid #D1D5DB; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; }
         
         /* Controls */
         #controls { height: 80px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 24px; z-index: 100; background: #d1d5db; }
@@ -90,7 +84,7 @@
         /* Print Styles for Flawless PDF/PPT Export */
         @media print {
             @page { size: 1280px 720px; margin: 0; }
-            body, html { overflow: visible !important; height: auto !important; background-color: #FFFFFF !important; }
+            body, html { overflow: visible !important; height: auto !important; background-color: #E8E8E8 !important; }
             #presentation-container { display: block !important; height: auto !important; }
             #deck { 
                 position: relative !important; 
@@ -101,7 +95,7 @@
                 border: none !important;
                 width: 1280px !important;
                 height: auto !important;
-                background-color: #FFFFFF !important;
+                background-color: #E8E8E8 !important;
             }
             .slide { 
                 display: flex !important; 
@@ -111,11 +105,11 @@
                 page-break-after: always;
                 break-after: page;
                 opacity: 1 !important;
-                background-color: #FFFFFF !important;
+                background-color: #E8E8E8 !important;
             }
             #controls { display: none !important; }
             
-            /* Absolute kill-switch for ALL shadows */
+            /* Absolute kill-switch for ALL shadows to prevent PPT artifacts */
             * { 
                 -webkit-print-color-adjust: exact !important; 
                 print-color-adjust: exact !important; 
@@ -145,9 +139,9 @@
                     </p>
                 </div>
                 
-                <div class="absolute bottom-[60px] left-[80px] right-[80px] flex justify-between items-end">
+                <div class="absolute bottom-[30px] left-[80px] right-[80px] flex justify-between items-end">
                     <div class="text-[40px] text-white font-bold tracking-tighter">Axia<span class="text-axia-pink">Origin</span></div>
-                    <div class="text-[14px] text-gray-500 font-bold tracking-widest uppercase">Strictly Confidential</div>
+                    <div class="text-[14px] text-gray-500 font-bold tracking-widest uppercase mb-2">Strictly Confidential</div>
                 </div>
             </div>
 
@@ -160,7 +154,7 @@
                 
                 <div class="slide-content gap-8">
                     <div class="axia-card flex-[2] min-w-0 justify-center px-[40px]">
-                        <i data-lucide="heart-handshake" class="text-axia-pink w-10 h-10 mb-6 shrink-0"></i>
+                        <i data-lucide="heart-handshake" class="text-axia-pink w-12 h-12 mb-6 shrink-0"></i>
                         <h3 class="text-[24px] text-axia-black font-bold mb-4">Equi's mission resonates with Axia's soul.</h3>
                         <p class="body-text text-[15px]">
                             We are a small team of people who care deeply about the work we do and the people we do it with. We are drawn to leaders who are trying to make the world a more prosperous place for all. 
@@ -169,7 +163,7 @@
                         </p>
                     </div>
                     
-                    <div class="bg-gray-50 rounded-xl p-[32px] border border-gray-200 flex-1 min-w-0 flex flex-col justify-center relative overflow-hidden">
+                    <div class="bg-white rounded-xl p-[32px] border border-gray-200 flex-1 min-w-0 flex flex-col justify-center relative overflow-hidden">
                         <div class="absolute top-0 right-0 w-20 h-20 bg-axia-pink opacity-10 rounded-bl-[80px]"></div>
                         <i data-lucide="quote" class="text-axia-pink w-8 h-8 mb-6 shrink-0"></i>
                         <p class="body-text italic text-gray-500">
@@ -188,40 +182,72 @@
                     <div class="slide-line"></div>
                 </div>
                 
-                <div class="slide-content grid grid-cols-3 gap-6">
-                    <!-- Column 1 -->
-                    <div class="flex flex-col gap-4">
-                        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 border-l-4 border-l-axia-pink flex-1 flex flex-col justify-center min-w-0">
-                            <h4 class="card-title flex items-center"><i data-lucide="smartphone" class="w-5 h-5 text-axia-pink mr-2"></i>1. Algorithmic Bias</h4>
-                            <p class="body-text">An immediate opportunity relates to algorithmic bias on social media platforms.</p>
-                        </div>
-                        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 border-l-4 border-l-gray-400 flex-1 flex flex-col justify-center min-w-0">
-                            <h4 class="card-title flex items-center"><i data-lucide="bot" class="w-5 h-5 text-axia-black mr-2"></i>2. AI in Core Work</h4>
-                            <p class="body-text">Your research team produces high-quality outputs, and you sense that AI could drive new ways of working.</p>
-                        </div>
-                    </div>
-
-                    <!-- Column 2 -->
-                    <div class="flex flex-col gap-4">
-                        <div class="axia-card flex-1 flex-col items-center justify-center text-center min-w-0">
-                            <i data-lucide="users" class="w-8 h-8 text-axia-pink mb-3"></i>
-                            <h4 class="card-title">External Positioning</h4>
-                            <p class="body-text">Substantive discussions with senior stakeholders about algorithmic biases.</p>
-                        </div>
-                        <div class="axia-card flex-1 flex-col items-center justify-center text-center min-w-0">
-                            <i data-lucide="cpu" class="w-8 h-8 text-axia-black mb-3"></i>
-                            <h4 class="card-title">Internal Readiness</h4>
-                            <p class="body-text">Managing the impact of AI in Equi's core operations efficiently and securely.</p>
-                        </div>
-                    </div>
-
-                    <!-- Column 3 -->
-                    <div class="bg-axia-black text-white rounded-xl p-8 flex flex-col justify-center items-center text-center min-w-0">
-                        <i data-lucide="zap" class="text-axia-pink w-12 h-12 mb-6 shrink-0"></i>
-                        <h3 class="text-[12px] font-bold tracking-widest text-axia-pink uppercase mb-4 shrink-0">The Underlying Need</h3>
-                        <p class="text-[18px] font-light leading-relaxed text-gray-200">
-                            To become an organisation that is <strong class="text-white font-bold">disruption-ready</strong>, not only in the context of AI, but for any current or future disruptor.
+                <div class="slide-content flex-col gap-5">
+                    
+                    <!-- Long Narrow Textbox -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-5 shrink-0 w-full flex items-center">
+                        <p class="body-text text-[15px] text-gray-800 font-medium m-0 leading-relaxed">
+                            We are a small team of people who care deeply about the work we do and the people we do it with. We are drawn to leaders who are trying to make the world a more prosperous place for all.
                         </p>
+                    </div>
+
+                    <!-- 3 Columns -->
+                    <div class="flex-1 grid grid-cols-3 gap-6 min-h-0">
+                        
+                        <!-- Column 1: Immediate Opportunities -->
+                        <div class="flex flex-col gap-4">
+                            <!-- Narrow Heading -->
+                            <div class="bg-white border border-gray-200 rounded-lg py-2 px-4 shrink-0 text-center">
+                                <h4 class="text-[12px] font-bold tracking-widest uppercase text-axia-black">Immediate Opportunities</h4>
+                            </div>
+
+                            <div class="bg-white border border-gray-200 border-t-4 border-t-axia-pink rounded-xl p-6 flex-1 flex flex-col items-center justify-center text-center min-w-0">
+                                <i data-lucide="smartphone" class="w-8 h-8 text-axia-pink mb-3 shrink-0"></i>
+                                <h4 class="card-title">Algorithmic Bias</h4>
+                                <p class="body-text">An immediate opportunity relates to algorithmic bias on social media platforms.</p>
+                            </div>
+                            <div class="bg-white border border-gray-200 border-t-4 border-t-axia-black rounded-xl p-6 flex-1 flex flex-col items-center justify-center text-center min-w-0">
+                                <i data-lucide="bot" class="w-8 h-8 text-axia-black mb-3 shrink-0"></i>
+                                <h4 class="card-title">AI in Core Work</h4>
+                                <p class="body-text">Your research team produces high-quality outputs, and you sense that AI could drive new ways of working.</p>
+                            </div>
+                        </div>
+
+                        <!-- Column 2: Outcomes you need -->
+                        <div class="flex flex-col gap-4">
+                            <!-- Narrow Heading -->
+                            <div class="bg-white border border-gray-200 rounded-lg py-2 px-4 shrink-0 text-center">
+                                <h4 class="text-[12px] font-bold tracking-widest uppercase text-axia-black">Outcomes you need</h4>
+                            </div>
+
+                            <div class="bg-white border border-gray-200 border-t-4 border-t-axia-pink rounded-xl p-6 flex-1 flex flex-col items-center justify-center text-center min-w-0">
+                                <i data-lucide="users" class="w-8 h-8 text-axia-pink mb-3 shrink-0"></i>
+                                <h4 class="card-title">External Positioning</h4>
+                                <p class="body-text">Substantive discussions with senior stakeholders about algorithmic biases.</p>
+                            </div>
+                            <div class="bg-white border border-gray-200 border-t-4 border-t-axia-black rounded-xl p-6 flex-1 flex flex-col items-center justify-center text-center min-w-0">
+                                <i data-lucide="cpu" class="w-8 h-8 text-axia-black mb-3 shrink-0"></i>
+                                <h4 class="card-title">Internal Readiness</h4>
+                                <p class="body-text">Managing the impact of AI in Equi's core operations efficiently and securely.</p>
+                            </div>
+                        </div>
+
+                        <!-- Column 3: Underlying Need -->
+                        <div class="flex flex-col gap-4">
+                            <!-- Invisible spacer to keep the black box perfectly aligned -->
+                            <div class="bg-transparent py-2 px-4 shrink-0 text-center opacity-0 pointer-events-none">
+                                <h4 class="text-[12px] font-bold tracking-widest uppercase">Spacer</h4>
+                            </div>
+
+                            <div class="bg-gray-900 border border-gray-800 text-white rounded-xl p-8 flex-1 flex flex-col justify-center items-center text-center min-w-0 border-t-4 border-t-axia-pink">
+                                <i data-lucide="zap" class="text-axia-pink w-12 h-12 mb-6 shrink-0"></i>
+                                <h3 class="text-[12px] font-bold tracking-widest text-white uppercase mb-4 shrink-0">The Underlying Need</h3>
+                                <p class="text-[15px] font-light leading-relaxed text-gray-200">
+                                    We believe these two topics can be thought of as separate expressions of the same underlying need: to become an organisation that is <strong class="text-white font-bold">disruption-ready</strong>, not only in the context of AI, but for any current or future disruptor.
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 
@@ -236,8 +262,8 @@
                 </div>
                 
                 <div class="slide-content flex items-center justify-center w-full">
-                    <div class="bg-gray-50 rounded-xl p-10 border border-gray-200 w-full relative overflow-hidden h-[360px] flex flex-col justify-center">
-                        <div class="absolute top-0 right-0 w-40 h-full bg-gray-200 opacity-50 transform skew-x-12 translate-x-12 z-0"></div>
+                    <div class="bg-white rounded-xl p-10 border border-gray-200 w-full relative overflow-hidden h-[360px] flex flex-col justify-center">
+                        <div class="absolute top-0 right-0 w-40 h-full bg-gray-100 opacity-50 transform skew-x-12 translate-x-12 z-0"></div>
                         
                         <h3 class="text-[20px] font-bold mb-4 text-axia-black relative z-10 text-center">A Single, Coherent Statement of Work</h3>
                         <p class="body-text relative z-10 mb-8 text-center max-w-[800px] mx-auto text-gray-600">
@@ -245,7 +271,7 @@
                         </p>
 
                         <div class="flex items-stretch gap-4 relative z-10">
-                            <div class="flex-1 bg-axia-black text-white p-6 rounded-lg flex flex-col items-center justify-center text-center h-[160px] min-w-0">
+                            <div class="flex-1 bg-gray-900 text-white p-6 rounded-lg flex flex-col items-center justify-center text-center h-[160px] min-w-0 border border-gray-800">
                                 <i data-lucide="compass" class="w-8 h-8 text-axia-pink mb-3 shrink-0"></i>
                                 <span class="font-bold text-[14px]">Assessing disruption readiness.</span>
                             </div>
@@ -254,7 +280,7 @@
                                 <i data-lucide="arrow-right" class="w-6 h-6 text-gray-400"></i>
                             </div>
                             
-                            <div class="flex-1 bg-axia-black text-white p-6 rounded-lg flex flex-col items-center justify-center text-center h-[160px] min-w-0">
+                            <div class="flex-1 bg-gray-900 text-white p-6 rounded-lg flex flex-col items-center justify-center text-center h-[160px] min-w-0 border border-gray-800">
                                 <i data-lucide="search" class="w-8 h-8 text-axia-pink mb-3 shrink-0"></i>
                                 <span class="font-bold text-[14px]">Investigating algorithmic biases.</span>
                             </div>
@@ -263,7 +289,7 @@
                                 <i data-lucide="plus" class="w-6 h-6 text-gray-400"></i>
                             </div>
                             
-                            <div class="flex-1 bg-axia-black text-white p-6 rounded-lg flex flex-col items-center justify-center text-center h-[160px] min-w-0">
+                            <div class="flex-1 bg-gray-900 text-white p-6 rounded-lg flex flex-col items-center justify-center text-center h-[160px] min-w-0 border border-gray-800">
                                 <i data-lucide="cpu" class="w-8 h-8 text-axia-pink mb-3 shrink-0"></i>
                                 <span class="font-bold text-[14px]">Integrating AI capability development.</span>
                             </div>
@@ -283,34 +309,34 @@
                 
                 <div class="slide-content gap-8">
                     <div class="flex-1 flex flex-col gap-4 min-w-0">
-                        <h3 class="text-[12px] font-bold text-axia-pink uppercase tracking-widest shrink-0">Why This Matters</h3>
-                        <p class="body-text shrink-0">
+                        <h3 class="text-[14px] font-bold text-axia-pink uppercase tracking-widest shrink-0">Why This Matters</h3>
+                        <p class="body-text shrink-0 text-[15px]">
                             Technology-enabled disruption is already established in the context of Equi's work. In the months and years ahead, innovation with synthetic media and shifts in how trust is attributed online will create new pressures that no organisation can fully, accurately anticipate.
                         </p>
-                        <div class="axia-card flex-1 justify-center p-6 border-l-8 border-l-axia-black min-w-0">
-                            <p class="body-text font-bold text-axia-black">
+                        <div class="bg-white border border-gray-200 flex-1 flex flex-col justify-center p-6 border-l-8 border-l-axia-black rounded-r-xl min-w-0">
+                            <p class="text-[15px] font-bold text-axia-black leading-relaxed">
                                 The organisations that will navigate multiple and simultaneous disruptions effectively will be ready to transform, shift direction and adapt across the full spectrum of operations — led by leaders who make conscious decisions using structured approaches to interpret new trends and threats.
                             </p>
                         </div>
                     </div>
                     
                     <div class="flex-1 flex flex-col gap-4 min-w-0">
-                        <h3 class="text-[12px] font-bold text-axia-black uppercase tracking-widest shrink-0">Approach & Output</h3>
-                        <div class="flex gap-4 shrink-0 h-[120px]">
-                            <div class="bg-gray-50 rounded-xl p-5 border border-gray-200 border-t-4 border-t-axia-pink flex-1 flex flex-col min-w-0">
-                                <h4 class="card-title">1. Unlock Instincts</h4>
-                                <p class="small-text">Unlock your curiosity, instincts and conscious thinking.</p>
+                        <h3 class="text-[14px] font-bold text-axia-black uppercase tracking-widest shrink-0">Approach & Output</h3>
+                        <div class="flex gap-4 shrink-0 h-[130px]">
+                            <div class="bg-white border border-gray-200 rounded-xl p-5 border-t-4 border-t-axia-pink flex-1 flex flex-col min-w-0">
+                                <h4 class="card-title text-[15px]">1. Unlock Instincts</h4>
+                                <p class="small-text text-gray-600">Unlock your curiosity, instincts and conscious thinking.</p>
                             </div>
-                            <div class="bg-gray-50 rounded-xl p-5 border border-gray-200 border-t-4 border-t-axia-black flex-1 flex flex-col min-w-0">
-                                <h4 class="card-title">2. Diagnostic Assessment</h4>
-                                <p class="small-text">A calibrated assessment using bias and AI as live anchor examples.</p>
+                            <div class="bg-white border border-gray-200 rounded-xl p-5 border-t-4 border-t-axia-black flex-1 flex flex-col min-w-0">
+                                <h4 class="card-title text-[15px]">2. Diagnostic Assessment</h4>
+                                <p class="small-text text-gray-600">A calibrated assessment using bias and AI as live anchor examples.</p>
                             </div>
                         </div>
-                        <div class="bg-axia-black text-white rounded-xl p-6 flex-1 flex flex-col justify-center border-b-8 border-axia-pink min-w-0">
+                        <div class="bg-gray-900 text-white rounded-xl p-6 flex-1 flex flex-col justify-center border-b-8 border-axia-pink min-w-0 border border-gray-800">
                             <h4 class="text-axia-pink font-bold mb-2 uppercase text-[12px] tracking-widest flex items-center shrink-0">
                                 <i data-lucide="flag" class="w-4 h-4 mr-2"></i> The Output
                             </h4>
-                            <p class="body-text text-gray-300">
+                            <p class="text-[15px] text-gray-300 leading-relaxed">
                                 By the close, you will have a shared view of where Equi stands, a clear sense of how to start addressing priority topics, and the strategic framing needed to address the rest of the project with confidence.
                             </p>
                         </div>
@@ -320,8 +346,69 @@
                 <div class="logo-anchor">Axia<span class="text-axia-pink">Origin</span></div>
             </div>
 
-            <!-- ================= SLIDE 6: INVESTIGATING BIAS ================= -->
-            <div class="slide" id="slide-6">
+            <!-- ================= SLIDE 6: WORKSHOP (SIDEBAR VARIANT) ================= -->
+            <div class="slide" id="slide-6" style="padding: 0;">
+                <div class="w-full h-full flex flex-row relative bg-[#E8E8E8]">
+                    <!-- Left Pink Sidebar (1/3) -->
+                    <div class="w-1/3 bg-axia-pink h-full p-[50px] flex flex-col justify-center z-10">
+                        <h3 class="text-[20px] font-bold text-white flex items-center mb-6">
+                            <i data-lucide="alert-circle" class="w-6 h-6 text-white mr-3"></i>
+                            Why This Matters
+                        </h3>
+                        <p class="text-[15px] text-white/90 leading-relaxed mb-8">
+                            Technology-enabled disruption is already established in the context of Equi's work. In the months and years ahead, innovation with synthetic media and shifts in how trust is attributed online will create new pressures that no organisation can fully, accurately anticipate.
+                        </p>
+                        <div class="bg-black/10 p-6 rounded-xl border-l-4 border-white flex flex-col justify-center">
+                            <p class="text-[15px] font-bold text-white leading-relaxed">
+                                The organisations that will navigate multiple and simultaneous disruptions effectively will be ready to transform, shift direction and adapt across the full spectrum of operations — led by leaders who make conscious decisions using structured approaches to interpret new trends and threats.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Content Area (2/3) -->
+                    <div class="w-2/3 h-full px-[80px] py-[50px] flex flex-col relative">
+                        <!-- Heading -->
+                        <div class="slide-header" style="margin-bottom: 30px;">
+                            <h1 class="slide-title">Leadership Workshop: Disruption Readiness Assessment & Alignment.</h1>
+                            <div class="slide-line"></div>
+                        </div>
+                        
+                        <div class="flex-1 flex flex-col gap-4 justify-center">
+                            <h3 class="text-[18px] font-bold text-axia-black flex items-center mb-2">
+                                <i data-lucide="target" class="w-5 h-5 text-axia-black mr-2"></i>
+                                Approach & Output
+                            </h3>
+                            
+                            <!-- Approach Cards -->
+                            <div class="flex flex-col gap-3 mb-2 shrink-0">
+                                <div class="bg-white rounded-xl p-4 border-t-4 border-axia-pink border border-gray-200 min-w-0">
+                                    <h4 class="text-[15px] font-bold mb-1 text-axia-black">1. Unlock Instincts</h4>
+                                    <p class="text-[13px] text-gray-600 leading-relaxed">Unlock your curiosity, instincts and conscious thinking.</p>
+                                </div>
+                                <div class="bg-white rounded-xl p-4 border-t-4 border-axia-black border border-gray-200 min-w-0">
+                                    <h4 class="text-[15px] font-bold mb-1 text-axia-black">2. Diagnostic Assessment</h4>
+                                    <p class="text-[13px] text-gray-600 leading-relaxed">A calibrated assessment using bias and AI as live anchor examples.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Output Card -->
+                            <div class="bg-gray-900 border border-gray-800 text-white rounded-xl p-6 flex-1 flex flex-col justify-center min-w-0">
+                                <h4 class="text-axia-pink font-bold mb-3 uppercase text-[12px] tracking-widest flex items-center">
+                                    <i data-lucide="flag" class="w-4 h-4 mr-2"></i> The Output
+                               </h4>
+                                <p class="text-[15px] text-gray-300 leading-relaxed font-light">
+                                    By the close, you will have a shared view of where Equi stands, a clear sense of how to start addressing priority topics, and the strategic framing needed to address the rest of the project with confidence.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="logo-anchor" style="left: 80px;">Axia<span class="text-axia-pink">Origin</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= SLIDE 7: INVESTIGATING BIAS ================= -->
+            <div class="slide" id="slide-7">
                 <div class="slide-header">
                     <h1 class="slide-title">Investigating Algorithmic Biases: Establishing a Credible Position.</h1>
                     <div class="slide-line"></div>
@@ -329,27 +416,27 @@
                 
                 <div class="slide-content gap-8">
                     <div class="flex-1 flex flex-col gap-4 min-w-0">
-                        <h3 class="text-[12px] font-bold text-axia-pink uppercase tracking-widest shrink-0">Why this matters for Equi</h3>
-                        <p class="body-text shrink-0">
+                        <h3 class="text-[14px] font-bold text-axia-pink uppercase tracking-widest shrink-0">Why this matters for Equi</h3>
+                        <p class="body-text shrink-0 text-[15px]">
                             Algorithmic bias on social media platforms — particularly the disproportionate reach of right-wing and anti-Muslim content — is a live and pressing issue that Equi has been invited to address.
                         </p>
-                        <div class="axia-card flex-1 justify-center p-6 border-l-8 border-l-axia-pink min-w-0">
-                            <p class="body-text font-bold text-axia-black">
+                        <div class="bg-white border border-gray-200 rounded-r-xl p-6 border-l-8 border-l-axia-pink flex-1 flex flex-col justify-center min-w-0">
+                            <p class="text-[15px] font-bold text-axia-black leading-relaxed">
                                 Doing so with credibility requires a clear, structured, repeatable and well-governed methodology that helps establish Equi's preferred position in key discussions.
                             </p>
                         </div>
                     </div>
                     
                     <div class="flex-1 flex flex-col gap-4 min-w-0">
-                        <h3 class="text-[12px] font-bold text-axia-black uppercase tracking-widest shrink-0">Approach & Outputs</h3>
-                        <p class="body-text shrink-0">
+                        <h3 class="text-[14px] font-bold text-axia-black uppercase tracking-widest shrink-0">Approach & Outputs</h3>
+                        <p class="body-text shrink-0 text-[15px]">
                             Investigating bias within social media algorithms starts with the simple-sounding but difficult task of defining specific questions that require structured answers to give the evidence base needed. 
                         </p>
-                        <p class="body-text shrink-0">
+                        <p class="body-text shrink-0 text-[15px]">
                             This requires precision, governance and a clear understanding of what is possible - which we will manage using a method called the <strong class="text-axia-black font-bold">'Value Pyramid'</strong>. Completing this step provides the structure for the clear, defensible approach that will be adopted to investigate algorithmic bias. The evidence base that follows needs to withstand the highest levels of scrutiny and help position Equi exactly where it wants to be to lead on specific elements of this issue.
                         </p>
                         <!-- Output Card -->
-                        <div class="bg-axia-black rounded-xl p-6 flex-1 min-h-[80px] min-w-0">
+                        <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 flex-1 min-h-[80px] min-w-0 mt-2">
                             <!-- Intentionally blank space holder -->
                         </div>
                     </div>
@@ -358,39 +445,39 @@
                 <div class="logo-anchor">Axia<span class="text-axia-pink">Origin</span></div>
             </div>
 
-            <!-- ================= SLIDE 7: SOURCES OF BIAS ================= -->
-            <div class="slide" id="slide-7">
+            <!-- ================= SLIDE 8: SOURCES OF BIAS ================= -->
+            <div class="slide" id="slide-8">
                 <div class="slide-header">
                     <h1 class="slide-title">Understanding the Sources of Bias: Three Distinct Factors.</h1>
                     <div class="slide-line"></div>
                 </div>
                 
                 <div class="slide-content flex-col">
-                    <p class="body-text mb-4 shrink-0 max-w-[1000px]">
+                    <p class="body-text text-[15px] mb-4 shrink-0 max-w-[1000px]">
                         The starting point to understand bias is to distinguish between three distinct factors that can give right-wing or anti-Muslim content greater reach on social media platforms:
                     </p>
 
                     <div class="flex-1 grid grid-cols-3 gap-6">
-                        <div class="axia-card justify-center p-6 border-t-8 border-t-axia-black min-w-0">
-                            <i data-lucide="network" class="w-8 h-8 text-axia-pink mb-4 shrink-0"></i>
-                            <h3 class="card-title">1. Inauthentic Coordinated Behaviour</h3>
-                            <p class="body-text">
+                        <div class="bg-gray-900 border border-gray-800 rounded-xl flex flex-col justify-center p-6 border-t-8 border-t-axia-pink min-w-0">
+                            <i data-lucide="network" class="w-10 h-10 text-axia-pink mb-4 shrink-0"></i>
+                            <h3 class="card-title text-white">1. Inauthentic Coordinated Behaviour</h3>
+                            <p class="body-text text-gray-400">
                                 Organised networks deliberately amplifying content — bots, coordinated inauthentic accounts, manipulation campaigns.
                             </p>
                         </div>
 
-                        <div class="axia-card justify-center p-6 border-t-8 border-t-gray-400 min-w-0">
-                            <i data-lucide="git-merge" class="w-8 h-8 text-axia-black mb-4 shrink-0"></i>
-                            <h3 class="card-title">2. Bias Patterns</h3>
-                            <p class="body-text">
+                        <div class="bg-gray-900 border border-gray-800 rounded-xl flex flex-col justify-center p-6 border-t-8 border-t-axia-pink min-w-0">
+                            <i data-lucide="git-merge" class="w-10 h-10 text-white mb-4 shrink-0"></i>
+                            <h3 class="card-title text-white">2. Bias Patterns</h3>
+                            <p class="body-text text-gray-400">
                                 Platform architecture that structurally favours certain content types, emotional registers, or ideological framings.
                             </p>
                         </div>
 
-                        <div class="axia-card justify-center p-6 border-t-8 border-t-axia-pink min-w-0">
-                            <i data-lucide="users" class="w-8 h-8 text-axia-black mb-4 shrink-0"></i>
-                            <h3 class="card-title">3. Content Engagement Patterns</h3>
-                            <p class="body-text">
+                        <div class="bg-gray-900 border border-gray-800 rounded-xl flex flex-col justify-center p-6 border-t-8 border-t-axia-pink min-w-0">
+                            <i data-lucide="users" class="w-10 h-10 text-white mb-4 shrink-0"></i>
+                            <h3 class="card-title text-white">3. Content Engagement Patterns</h3>
+                            <p class="body-text text-gray-400">
                                 Legitimate user behaviour where certain content generates more interaction and is therefore surfaced more widely.
                             </p>
                         </div>
@@ -400,8 +487,8 @@
                 <div class="logo-anchor">Axia<span class="text-axia-pink">Origin</span></div>
             </div>
 
-            <!-- ================= SLIDE 8: AI INTEGRATION ================= -->
-            <div class="slide" id="slide-8">
+            <!-- ================= SLIDE 9: AI INTEGRATION ================= -->
+            <div class="slide" id="slide-9">
                 <div class="slide-header">
                     <h1 class="slide-title">AI Capability Skills Transfer and Workflow Development.</h1>
                     <div class="slide-line"></div>
@@ -409,50 +496,50 @@
                 
                 <div class="slide-content gap-8">
                     <div class="flex-1 flex flex-col gap-4 min-w-0">
-                        <h3 class="text-[12px] font-bold text-axia-pink uppercase tracking-widest shrink-0">Why this matters</h3>
-                        <p class="body-text shrink-0">
+                        <h3 class="text-[14px] font-bold text-axia-pink uppercase tracking-widest shrink-0">Why this matters</h3>
+                        <p class="body-text shrink-0 text-[15px]">
                             Equi produces research that is careful, considered and impactful. The people who write it care deeply about the credibility of their work which serves as the foundation of Equi, its reputation and the experience of collaborating on key topics.
                         </p>
-                        <div class="axia-card flex-1 justify-center p-6 min-w-0">
-                            <p class="body-text font-bold text-axia-black mb-3">
+                        <div class="bg-white border border-gray-200 rounded-xl flex-1 flex flex-col justify-center p-6 min-w-0">
+                            <p class="text-[15px] font-bold text-axia-black mb-3">
                                 The cultural moment we're in that Equi's research could shape is evolving quickly.
                             </p>
-                            <p class="body-text">
+                            <p class="text-[15px] text-gray-700 leading-relaxed">
                                 AI best practices (also evolving quickly) could modify how fast and how widely Equi can contribute - potentially making it possible to produce research in a fraction of the time currently required.
                             </p>
                         </div>
                     </div>
                     
                     <div class="flex-1 flex flex-col gap-4 min-w-0">
-                        <h3 class="text-[12px] font-bold text-axia-black uppercase tracking-widest mb-2 shrink-0">Approach & Outputs</h3>
+                        <h3 class="text-[14px] font-bold text-axia-black uppercase tracking-widest mb-1 shrink-0">Approach & Outputs</h3>
                         <div class="flex flex-col gap-3 shrink-0">
-                            <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 border-l-4 border-l-axia-pink flex items-center min-w-0">
-                                <div class="w-6 font-bold text-[14px] text-axia-black">1.</div>
+                            <div class="bg-white border border-gray-200 rounded-xl p-4 border-l-4 border-l-axia-pink flex items-center min-w-0">
+                                <div class="w-6 font-bold text-[15px] text-axia-black">1.</div>
                                 <div>
                                     <h4 class="font-bold text-[14px] text-axia-black">Landscape & Mechanisms</h4>
                                     <p class="small-text">Understand AI best practices, evaluate and govern tools, identify risks.</p>
                                 </div>
                             </div>
-                            <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 border-l-4 border-l-axia-black flex items-center min-w-0">
-                                <div class="w-6 font-bold text-[14px] text-axia-black">2.</div>
+                            <div class="bg-white border border-gray-200 rounded-xl p-4 border-l-4 border-l-axia-black flex items-center min-w-0">
+                                <div class="w-6 font-bold text-[15px] text-axia-black">2.</div>
                                 <div>
                                     <h4 class="font-bold text-[14px] text-axia-black">Workflow Mapping</h4>
                                     <p class="small-text">Map the research workflow end to end, identify AI entry points, adopt with ownership.</p>
                                 </div>
                             </div>
-                            <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 border-l-4 border-l-gray-400 flex items-center min-w-0">
-                                <div class="w-6 font-bold text-[14px] text-axia-black">3.</div>
+                            <div class="bg-white border border-gray-200 rounded-xl p-4 border-l-4 border-l-gray-400 flex items-center min-w-0">
+                                <div class="w-6 font-bold text-[15px] text-axia-black">3.</div>
                                 <div>
                                     <h4 class="font-bold text-[14px] text-axia-black">Evidencing Tangible Benefits</h4>
                                     <p class="small-text">Perform real research for the algorithmic bias workstream to prove effectiveness.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-axia-black text-white rounded-xl p-5 flex-1 flex flex-col justify-center border-b-4 border-b-axia-pink min-w-0">
+                        <div class="bg-gray-900 border border-gray-800 text-white rounded-xl p-5 flex-1 flex flex-col justify-center border-b-4 border-b-axia-pink min-w-0">
                             <h4 class="text-axia-pink font-bold mb-2 uppercase text-[12px] tracking-widest flex items-center shrink-0">
                                 <i data-lucide="flag" class="w-4 h-4 mr-2"></i> The Output
                             </h4>
-                            <p class="body-text text-gray-300">
+                            <p class="text-[14px] text-gray-300 leading-relaxed">
                                 Skills transfer is embedded throughout the project, ensuring the capability <strong class="text-white">stays with Equi</strong> and continues to develop after the engagement concludes.
                             </p>
                         </div>
@@ -462,8 +549,8 @@
                 <div class="logo-anchor">Axia<span class="text-axia-pink">Origin</span></div>
             </div>
 
-            <!-- ================= SLIDE 9: REDESIGNING CONSULTING ================= -->
-            <div class="slide" id="slide-9">
+            <!-- ================= SLIDE 10: REDESIGNING CONSULTING ================= -->
+            <div class="slide" id="slide-10">
                 <div class="slide-header">
                     <h1 class="slide-title">We've spent years redesigning what good consulting looks and feels like - and our clients notice.</h1>
                     <div class="slide-line"></div>
@@ -486,15 +573,15 @@
                         <div class="axia-card flex-1 p-5 justify-around border-t-0 rounded-t-none min-w-0">
                             <div class="flex items-start gap-2">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-axia-pink shrink-0 mt-0.5"></i>
-                                <span class="small-text">We are precise in our recommendations, deliberate in our approach, and transparent in our commercials. You will never be surprised by us.</span>
+                                <span class="small-text text-gray-600">We are precise in our recommendations, deliberate in our approach, and transparent in our commercials. You will never be surprised by us.</span>
                             </div>
                             <div class="flex items-start gap-2 mt-2">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-axia-pink shrink-0 mt-0.5"></i>
-                                <span class="small-text">We bring the right skills to the moments that matter most. Delivering what is needed, not just what is in the proposal.</span>
+                                <span class="small-text text-gray-600">We bring the right skills to the moments that matter most. Delivering what is needed, not just what is in the proposal.</span>
                             </div>
                             <div class="flex items-start gap-2 mt-2">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-axia-pink shrink-0 mt-0.5"></i>
-                                <span class="small-text">We treat your problem as our own. When it goes well, the credit is yours; when it doesn't, the accountability is ours.</span>
+                                <span class="small-text text-gray-600">We treat your problem as our own. When it goes well, the credit is yours; when it doesn't, the accountability is ours.</span>
                             </div>
                         </div>
                     </div>
@@ -514,15 +601,15 @@
                         <div class="axia-card flex-1 p-5 justify-around border-t-0 rounded-t-none min-w-0">
                             <div class="flex items-start gap-2">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-axia-pink shrink-0 mt-0.5"></i>
-                                <span class="small-text">We develop the people around us. Capability transfer is core to how we operate.</span>
+                                <span class="small-text text-gray-600">We develop the people around us. Capability transfer is core to how we operate.</span>
                             </div>
                             <div class="flex items-start gap-2 mt-2">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-axia-pink shrink-0 mt-0.5"></i>
-                                <span class="small-text">The feedback we give tends to change how people think about feedback entirely.</span>
+                                <span class="small-text text-gray-600">The feedback we give tends to change how people think about feedback entirely.</span>
                             </div>
                             <div class="flex items-start gap-2 mt-2">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-axia-pink shrink-0 mt-0.5"></i>
-                                <span class="small-text">We never make you feel like an outsider in your own project. We integrate seamlessly with you and your team.</span>
+                                <span class="small-text text-gray-600">We never make you feel like an outsider in your own project. We integrate seamlessly with you and your team.</span>
                             </div>
                         </div>
                     </div>
@@ -542,15 +629,15 @@
                         <div class="axia-card flex-1 p-5 justify-around border-t-0 rounded-t-none min-w-0">
                             <div class="flex items-start gap-2">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-axia-pink shrink-0 mt-0.5"></i>
-                                <span class="small-text">Everything we produce is shaped to meet your needs - not our preferences.</span>
+                                <span class="small-text text-gray-600">Everything we produce is shaped to meet your needs - not our preferences.</span>
                             </div>
                             <div class="flex items-start gap-2 mt-2">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-axia-pink shrink-0 mt-0.5"></i>
-                                <span class="small-text">We produce outputs you'll be proud to share and able use long after we leave.</span>
+                                <span class="small-text text-gray-600">We produce outputs you'll be proud to share and able use long after we leave.</span>
                             </div>
                             <div class="flex items-start gap-2 mt-2">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-axia-pink shrink-0 mt-0.5"></i>
-                                <span class="small-text">When we can't quantify something, we say so. We'd rather admit uncertainty than manufacture confidence we don't have.</span>
+                                <span class="small-text text-gray-600">When we can't quantify something, we say so. We'd rather admit uncertainty than manufacture confidence we don't have.</span>
                             </div>
                         </div>
                     </div>
@@ -560,8 +647,8 @@
                 <div class="logo-anchor">Axia<span class="text-axia-pink">Origin</span></div>
             </div>
 
-            <!-- ================= SLIDE 10: COMMERCIALS ================= -->
-            <div class="slide" id="slide-10">
+            <!-- ================= SLIDE 11: COMMERCIALS ================= -->
+            <div class="slide" id="slide-11">
                 <div class="slide-header">
                     <h1 class="slide-title">You'll get quality outputs, delivered quickly, and priced fairly. That's a commitment we take seriously.</h1>
                     <div class="slide-line"></div>
@@ -569,8 +656,8 @@
                 
                 <div class="slide-content flex-col gap-6">
                     <!-- COO Quote Section -->
-                    <div class="h-[90px] shrink-0 bg-gray-50 border border-gray-200 rounded-xl border-l-4 border-l-axia-pink p-5 flex items-center relative overflow-hidden">
-                        <i data-lucide="quote" class="absolute -right-4 -top-4 w-32 h-32 text-gray-200 rotate-12"></i>
+                    <div class="h-[90px] shrink-0 bg-white border border-gray-200 rounded-xl border-l-4 border-l-axia-pink p-5 flex items-center relative overflow-hidden">
+                        <i data-lucide="quote" class="absolute -right-4 -top-4 w-32 h-32 text-gray-100 rotate-12"></i>
                         <i data-lucide="message-square" class="text-axia-pink w-8 h-8 shrink-0 mr-5 z-10"></i>
                         <div class="flex-1 relative z-10 flex flex-col justify-center">
                             <p class="body-text italic text-gray-700 font-medium mb-1">
@@ -583,48 +670,48 @@
                     <!-- Pricing Options -->
                     <div class="flex gap-6 flex-1 min-h-0">
                         <!-- Option 1 -->
-                        <div class="bg-white border border-gray-200 rounded-xl flex-1 border-t-8 border-t-axia-pink flex flex-col p-6 overflow-hidden min-w-0">
+                        <div class="bg-gray-900 border border-gray-800 rounded-xl flex-1 border-t-8 border-t-axia-pink flex flex-col p-6 overflow-hidden min-w-0">
                             <h4 class="text-axia-pink font-bold tracking-widest text-[12px] uppercase mb-2 shrink-0">Option 1</h4>
-                            <h3 class="card-title mb-4 shrink-0">Full disruption assessment & readiness transformation</h3>
+                            <h3 class="card-title mb-4 shrink-0 text-white">Full disruption assessment & readiness transformation</h3>
                             
-                            <div class="text-[12px] font-bold text-gray-500 uppercase tracking-widest mb-3 shrink-0">What's included:</div>
+                            <div class="text-[12px] font-bold text-gray-400 uppercase tracking-widest mb-3 shrink-0">What's included:</div>
                             <div class="flex flex-col gap-3 flex-1 min-h-0">
                                 <div class="flex items-start">
                                     <i data-lucide="check-circle-2" class="text-axia-pink w-5 h-5 mr-2 shrink-0"></i>
-                                    <span class="body-text font-bold text-axia-black">Disruption readiness assessment</span>
+                                    <span class="body-text font-bold text-white">Disruption readiness assessment</span>
                                 </div>
                                 <div class="flex items-start">
                                     <i data-lucide="check-circle-2" class="text-axia-pink w-5 h-5 mr-2 shrink-0"></i>
-                                    <span class="body-text font-bold text-axia-black">AI capability transfer</span>
+                                    <span class="body-text font-bold text-white">AI capability transfer</span>
                                 </div>
                                 <div class="flex items-start">
                                     <i data-lucide="check-circle-2" class="text-axia-pink w-5 h-5 mr-2 shrink-0"></i>
-                                    <span class="body-text font-bold text-axia-black">Full analysis and Algorithmic Bias Report</span>
+                                    <span class="body-text font-bold text-white">Full analysis and Algorithmic Bias Report</span>
                                 </div>
                             </div>
                             
-                            <div class="mt-4 shrink-0 border-t border-gray-200 pt-4">
-                                <div class="text-gray-500 text-xs mb-1 uppercase tracking-widest font-bold">Price</div>
-                                <div class="text-[36px] font-bold text-axia-black">£70K <span class="text-[16px] font-normal text-gray-500">+ VAT</span></div>
+                            <div class="mt-4 shrink-0 border-t border-gray-700 pt-4">
+                                <div class="text-gray-400 text-xs mb-1 uppercase tracking-widest font-bold">Price</div>
+                                <div class="text-[36px] font-bold text-white">£70K <span class="text-[16px] font-normal text-gray-400">+ VAT</span></div>
                             </div>
                         </div>
 
                         <!-- Option 2 -->
-                        <div class="bg-white border border-gray-200 rounded-xl flex-1 border-t-8 border-t-axia-black flex flex-col p-6 overflow-hidden min-w-0">
-                            <h4 class="text-gray-500 font-bold tracking-widest text-[12px] uppercase mb-2 shrink-0">Option 2</h4>
-                            <h3 class="card-title mb-4 shrink-0">Algorithmic Bias Report</h3>
+                        <div class="bg-gray-900 border border-gray-800 rounded-xl flex-1 border-t-8 border-t-gray-500 flex flex-col p-6 overflow-hidden min-w-0">
+                            <h4 class="text-gray-400 font-bold tracking-widest text-[12px] uppercase mb-2 shrink-0">Option 2</h4>
+                            <h3 class="card-title mb-4 shrink-0 text-white">Algorithmic Bias Report</h3>
                             
-                            <div class="text-[12px] font-bold text-gray-500 uppercase tracking-widest mb-3 shrink-0">What's included:</div>
+                            <div class="text-[12px] font-bold text-gray-400 uppercase tracking-widest mb-3 shrink-0">What's included:</div>
                             <div class="flex flex-col gap-3 flex-1 min-h-0">
                                 <div class="flex items-start">
-                                    <i data-lucide="check-circle-2" class="text-axia-black w-5 h-5 mr-2 shrink-0"></i>
-                                    <span class="body-text font-bold text-axia-black">Full analysis and Algorithmic Bias Report</span>
+                                    <i data-lucide="check-circle-2" class="text-gray-400 w-5 h-5 mr-2 shrink-0"></i>
+                                    <span class="body-text font-bold text-white">Full analysis and Algorithmic Bias Report</span>
                                 </div>
                             </div>
                             
-                            <div class="mt-4 shrink-0 border-t border-gray-200 pt-4">
-                                <div class="text-gray-500 text-xs mb-1 uppercase tracking-widest font-bold">Price</div>
-                                <div class="text-[36px] font-bold text-axia-black">£35K <span class="text-[16px] font-normal text-gray-500">+ VAT</span></div>
+                            <div class="mt-4 shrink-0 border-t border-gray-700 pt-4">
+                                <div class="text-gray-400 text-xs mb-1 uppercase tracking-widest font-bold">Price</div>
+                                <div class="text-[36px] font-bold text-white">£35K <span class="text-[16px] font-normal text-gray-400">+ VAT</span></div>
                             </div>
                         </div>
                     </div>
@@ -633,40 +720,43 @@
                 <div class="logo-anchor">Axia<span class="text-axia-pink">Origin</span></div>
             </div>
 
-            <!-- ================= SLIDE 11: NEXT STEPS ================= -->
-            <div class="slide" id="slide-11">
+            <!-- ================= SLIDE 12: NEXT STEPS ================= -->
+            <div class="slide" id="slide-12">
                 <div class="slide-header">
                     <h1 class="slide-title">Next Steps: We act as a partner, not a typical agent, to ensure alignment before mobilisation.</h1>
                     <div class="slide-line"></div>
                 </div>
                 
-                <div class="slide-content grid grid-cols-3 gap-6">
-                    <div class="bg-gray-50 border border-gray-200 rounded-xl border-t-8 border-t-axia-black flex flex-col items-center text-center p-8 min-w-0">
-                        <div class="bg-white border border-gray-200 w-14 h-14 rounded-full flex items-center justify-center mb-6 shrink-0">
-                            <i data-lucide="message-circle" class="w-6 h-6 text-axia-pink"></i>
+                <div class="slide-content grid grid-cols-3 gap-8">
+                    <div class="bg-gray-900 border border-gray-800 rounded-xl border-t-8 border-t-gray-600 flex flex-col items-center justify-center text-center p-8 min-w-0 relative overflow-hidden">
+                        <div class="absolute -right-4 -bottom-8 text-[140px] font-black text-gray-800 leading-none select-none z-0">1</div>
+                        <div class="bg-gray-800 border border-gray-700 w-20 h-20 rounded-full flex items-center justify-center mb-6 shrink-0 relative z-10 ring-8 ring-gray-800/50">
+                            <i data-lucide="message-circle" class="w-10 h-10 text-axia-pink"></i>
                         </div>
-                        <h3 class="card-title">1. Your Response</h3>
-                        <p class="body-text">
+                        <h3 class="text-[22px] font-bold mb-4 text-white relative z-10">Your Response</h3>
+                        <p class="body-text text-gray-400 relative z-10">
                             Tell us what resonates and what questions it raises. We can adapt the scope and investment approach to what is practically achievable.
                         </p>
                     </div>
 
-                    <div class="bg-gray-50 border border-gray-200 rounded-xl border-t-8 border-t-axia-pink flex flex-col items-center text-center p-8 min-w-0">
-                        <div class="bg-white border border-gray-200 w-14 h-14 rounded-full flex items-center justify-center mb-6 shrink-0">
-                            <i data-lucide="flask-conical" class="w-6 h-6 text-axia-black"></i>
+                    <div class="bg-axia-pink border border-axia-pink border-t-8 border-t-[#FFA1B8] rounded-xl flex flex-col items-center justify-center text-center p-8 min-w-0 relative overflow-hidden">
+                        <div class="absolute -right-4 -bottom-8 text-[140px] font-black text-white/20 leading-none select-none z-0">2</div>
+                        <div class="bg-white/20 border border-white/30 w-20 h-20 rounded-full flex items-center justify-center mb-6 shrink-0 relative z-10 ring-8 ring-white/10">
+                            <i data-lucide="flask-conical" class="w-10 h-10 text-white"></i>
                         </div>
-                        <h3 class="card-title">2. A Chemistry Test</h3>
-                        <p class="body-text">
+                        <h3 class="text-[22px] font-bold mb-4 text-white relative z-10">A Chemistry Test</h3>
+                        <p class="body-text text-white/90 relative z-10">
                             A focused conversation — in person where possible — to refine the scope, agree the investment approach, and confirm how you would like to present this to potential funders.
                         </p>
                     </div>
 
-                    <div class="bg-gray-50 border border-gray-200 rounded-xl border-t-8 border-t-axia-black flex flex-col items-center text-center p-8 min-w-0">
-                        <div class="bg-white border border-gray-200 w-14 h-14 rounded-full flex items-center justify-center mb-6 shrink-0">
-                            <i data-lucide="rocket" class="w-6 h-6 text-axia-pink"></i>
+                    <div class="bg-gray-900 border border-gray-800 rounded-xl border-t-8 border-t-gray-600 flex flex-col items-center justify-center text-center p-8 min-w-0 relative overflow-hidden">
+                        <div class="absolute -right-4 -bottom-8 text-[140px] font-black text-gray-800 leading-none select-none z-0">3</div>
+                        <div class="bg-gray-800 border border-gray-700 w-20 h-20 rounded-full flex items-center justify-center mb-6 shrink-0 relative z-10 ring-8 ring-gray-800/50">
+                            <i data-lucide="rocket" class="w-10 h-10 text-axia-pink"></i>
                         </div>
-                        <h3 class="card-title">3. Mobilisation</h3>
-                        <p class="body-text">
+                        <h3 class="text-[22px] font-bold mb-4 text-white relative z-10">Mobilisation</h3>
+                        <p class="body-text text-gray-400 relative z-10">
                             We can mobilise a team within weeks of agreement, sharing in your challenges and successes from day one.
                         </p>
                     </div>
@@ -684,7 +774,7 @@
             <i data-lucide="chevron-left" class="w-5 h-5"></i>
         </button>
         <div id="slide-counter" class="text-[13px] font-bold tracking-widest text-gray-500 uppercase bg-white px-4 py-2 rounded-full border border-gray-300 z-50">
-            1 / 11
+            1 / 12
         </div>
         <button onclick="nextSlide()" class="bg-white border border-gray-300 w-10 h-10 rounded-full flex items-center justify-center hover:bg-axia-pink hover:border-axia-pink hover:text-white transition-colors cursor-pointer z-50 text-axia-black">
             <i data-lucide="chevron-right" class="w-5 h-5"></i>
@@ -729,25 +819,25 @@
             if (e.key === 'ArrowLeft') prevSlide();
         });
 
-        // Responsive presentation scaling
+        // The mathematically perfect scaling logic using absolute centering
         function resizePresentation() {
             const container = document.getElementById('presentation-container');
             const deck = document.getElementById('deck');
             
-            let containerWidth = container.clientWidth || window.innerWidth;
-            let containerHeight = container.clientHeight || (window.innerHeight - 80); // accommodate controls
+            const containerWidth = container.clientWidth;
+            const containerHeight = container.clientHeight;
             
             const scaleX = containerWidth / 1280;
             const scaleY = containerHeight / 720;
             
-            // Failsafe scale logic
-            let scale = Math.min(scaleX, scaleY) * 0.95;
-            if (scale < 0.1 || isNaN(scale)) scale = 0.5; // Avoid zero-scale collapse
+            // Use exactly 95% of the minimum scale to guarantee padding on all sides
+            const scale = Math.min(scaleX, scaleY) * 0.95; 
             
             deck.style.transform = `translate(-50%, -50%) scale(${scale})`;
         }
 
         window.addEventListener('resize', resizePresentation);
+        // Delay slight execution to ensure DOM paints before first scale calculation
         setTimeout(resizePresentation, 100);
     </script>
 </body>
