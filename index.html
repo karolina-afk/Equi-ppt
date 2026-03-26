@@ -39,6 +39,7 @@
             flex: 1;
             width: 100%;
             height: calc(100vh - 80px);
+            min-height: 400px; /* Explicit fallback for iframes */
             position: relative;
         }
 
@@ -191,61 +192,70 @@
                         </p>
                     </div>
 
-                    <!-- 3 Columns -->
-                    <div class="flex-1 grid grid-cols-3 gap-6 min-h-0">
+                    <!-- Layout: 2 Columns connected by arrows -->
+                    <div class="flex-1 grid grid-cols-[1fr_80px_1fr] gap-x-6 gap-y-4">
                         
-                        <!-- Column 1: Immediate Opportunities -->
-                        <div class="flex flex-col gap-4">
-                            <!-- Narrow Heading -->
-                            <div class="bg-white border border-gray-200 rounded-lg py-2 px-4 shrink-0 text-center">
-                                <h4 class="text-[12px] font-bold tracking-widest uppercase text-axia-black">Immediate Opportunities</h4>
-                            </div>
+                        <!-- Row 0: Headers -->
+                        <div class="bg-gray-200 border border-gray-300 rounded-lg py-2 px-4 flex items-center justify-center">
+                            <h4 class="text-[12px] font-bold tracking-widest uppercase text-axia-black m-0">Immediate Opportunities</h4>
+                        </div>
+                        <div></div> <!-- Spacer for middle arrow column -->
+                        <div class="bg-gray-200 border border-gray-300 rounded-lg py-2 px-4 flex items-center justify-center">
+                            <h4 class="text-[12px] font-bold tracking-widest uppercase text-axia-black m-0">Outcomes you need</h4>
+                        </div>
 
-                            <div class="bg-white border border-gray-200 border-t-4 border-t-axia-pink rounded-xl p-6 flex-1 flex flex-col items-center justify-center text-center min-w-0">
-                                <i data-lucide="smartphone" class="w-8 h-8 text-axia-pink mb-3 shrink-0"></i>
-                                <h4 class="card-title">Algorithmic Bias</h4>
-                                <p class="body-text">An immediate opportunity relates to algorithmic bias on social media platforms.</p>
+                        <!-- Row 1: Bias -> Positioning -->
+                        <div class="bg-white border border-gray-200 border-l-8 border-l-axia-black rounded-xl p-6 flex flex-col justify-center min-h-[140px]">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 bg-pink-50 border border-pink-100 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                    <i data-lucide="smartphone" class="w-5 h-5 text-axia-pink"></i>
+                                </div>
+                                <h4 class="text-[18px] font-bold text-axia-black">Algorithmic Bias</h4>
                             </div>
-                            <div class="bg-white border border-gray-200 border-t-4 border-t-axia-black rounded-xl p-6 flex-1 flex flex-col items-center justify-center text-center min-w-0">
-                                <i data-lucide="bot" class="w-8 h-8 text-axia-black mb-3 shrink-0"></i>
-                                <h4 class="card-title">AI in Core Work</h4>
-                                <p class="body-text">Your research team produces high-quality outputs, and you sense that AI could drive new ways of working.</p>
+                            <p class="body-text text-[14px]">An immediate opportunity relates to algorithmic bias on social media platforms.</p>
+                        </div>
+                        
+                        <div class="flex items-center justify-center relative w-full h-full">
+                            <!-- Dashed Line spanning grid gap -->
+                            <div class="absolute w-[calc(100%+48px)] border-t-[2px] border-dashed border-axia-pink top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0"></div>
+                            <!-- Arrow Circle -->
+                            <div class="w-10 h-10 bg-white border-[2px] border-axia-pink rounded-full flex items-center justify-center z-10">
+                                <i data-lucide="arrow-right" class="w-5 h-5 text-axia-pink"></i>
                             </div>
                         </div>
 
-                        <!-- Column 2: Outcomes you need -->
-                        <div class="flex flex-col gap-4">
-                            <!-- Narrow Heading -->
-                            <div class="bg-white border border-gray-200 rounded-lg py-2 px-4 shrink-0 text-center">
-                                <h4 class="text-[12px] font-bold tracking-widest uppercase text-axia-black">Outcomes you need</h4>
+                        <div class="bg-gray-900 border border-gray-800 border-l-8 border-l-axia-pink rounded-xl p-6 flex flex-col justify-center min-h-[140px]">
+                            <div class="flex items-center mb-3">
+                                <h4 class="text-[18px] font-bold text-white">External Positioning</h4>
                             </div>
+                            <p class="body-text text-gray-400 text-[14px]">Substantive discussions with senior stakeholders about algorithmic biases.</p>
+                        </div>
 
-                            <div class="bg-white border border-gray-200 border-t-4 border-t-axia-pink rounded-xl p-6 flex-1 flex flex-col items-center justify-center text-center min-w-0">
-                                <i data-lucide="users" class="w-8 h-8 text-axia-pink mb-3 shrink-0"></i>
-                                <h4 class="card-title">External Positioning</h4>
-                                <p class="body-text">Substantive discussions with senior stakeholders about algorithmic biases.</p>
+                        <!-- Row 2: AI -> Readiness -->
+                        <div class="bg-white border border-gray-200 border-l-8 border-l-axia-black rounded-xl p-6 flex flex-col justify-center min-h-[140px]">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 bg-gray-100 border border-gray-200 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                    <i data-lucide="bot" class="w-5 h-5 text-axia-black"></i>
+                                </div>
+                                <h4 class="text-[18px] font-bold text-axia-black">AI in Core Work</h4>
                             </div>
-                            <div class="bg-white border border-gray-200 border-t-4 border-t-axia-black rounded-xl p-6 flex-1 flex flex-col items-center justify-center text-center min-w-0">
-                                <i data-lucide="cpu" class="w-8 h-8 text-axia-black mb-3 shrink-0"></i>
-                                <h4 class="card-title">Internal Readiness</h4>
-                                <p class="body-text">Managing the impact of AI in Equi's core operations efficiently and securely.</p>
+                            <p class="body-text text-[14px]">Your research team produces high-quality outputs, and you sense that AI could drive new ways of working.</p>
+                        </div>
+
+                        <div class="flex items-center justify-center relative w-full h-full">
+                            <!-- Dashed Line spanning grid gap -->
+                            <div class="absolute w-[calc(100%+48px)] border-t-[2px] border-dashed border-axia-pink top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0"></div>
+                            <!-- Arrow Circle -->
+                            <div class="w-10 h-10 bg-white border-[2px] border-axia-pink rounded-full flex items-center justify-center z-10">
+                                <i data-lucide="arrow-right" class="w-5 h-5 text-axia-pink"></i>
                             </div>
                         </div>
 
-                        <!-- Column 3: Underlying Need -->
-                        <div class="flex flex-col gap-4">
-                            <!-- Invisible spacer to keep the black box perfectly aligned -->
-                            <div class="bg-transparent py-2 px-4 shrink-0 text-center opacity-0 pointer-events-none">
-                                <h4 class="text-[12px] font-bold tracking-widest uppercase">Spacer</h4>
+                        <div class="bg-gray-900 border border-gray-800 border-l-8 border-l-axia-pink rounded-xl p-6 flex flex-col justify-center min-h-[140px]">
+                            <div class="flex items-center mb-3">
+                                <h4 class="text-[18px] font-bold text-white">Internal Readiness</h4>
                             </div>
-
-                            <div class="bg-gray-900 border border-gray-800 text-white rounded-xl p-8 flex-1 flex flex-col justify-center items-center text-center min-w-0 border-t-4 border-t-axia-pink">
-                                <i data-lucide="zap" class="text-axia-pink w-12 h-12 mb-6 shrink-0"></i>
-                                <h3 class="text-[12px] font-bold tracking-widest text-white uppercase mb-4 shrink-0">The Underlying Need</h3>
-                                <p class="text-[15px] font-light leading-relaxed text-gray-200">
-                                    We believe these two topics can be thought of as separate expressions of the same underlying need: to become an organisation that is <strong class="text-white font-bold">disruption-ready</strong>, not only in the context of AI, but for any current or future disruptor.
-                                </p>
-                            </div>
+                            <p class="body-text text-gray-400 text-[14px]">Managing the impact of AI in Equi's core operations efficiently and securely.</p>
                         </div>
 
                     </div>
@@ -254,73 +264,113 @@
                 <div class="logo-anchor">Axia<span class="text-axia-pink">Origin</span></div>
             </div>
 
-            <!-- ================= SLIDE 4: PROPOSED APPROACH (REDESIGNED) ================= -->
+            <!-- ================= SLIDE 4: PROPOSED APPROACH (CONSULTING TIER 1 DESIGN) ================= -->
             <div class="slide" id="slide-4">
                 <div class="slide-header">
                     <h1 class="slide-title">Proposed Approach: A Structured Path to Disruption-Readiness.</h1>
                     <div class="slide-line"></div>
                 </div>
                 
-                <div class="slide-content flex-col gap-6">
-                    <!-- Top Section: Introductory Header -->
-                    <div class="bg-white border border-gray-200 rounded-xl p-8 shrink-0 w-full flex flex-col justify-center relative overflow-hidden">
-                        <!-- Subtle background shape to maintain premium design identity -->
-                        <div class="absolute right-0 top-0 w-1/3 h-full bg-gray-50 transform skew-x-12 translate-x-10 z-0 border-l border-gray-100"></div>
-                        
-                        <div class="relative z-10 flex items-center">
-                            <div class="w-16 h-16 bg-gray-100 border border-gray-200 rounded-full flex items-center justify-center mr-6 shrink-0 shadow-sm">
-                                <i data-lucide="layers" class="w-7 h-7 text-axia-pink"></i>
-                            </div>
-                            <div class="flex flex-col">
-                                <h3 class="text-[20px] font-bold mb-2 text-axia-black">A Single, Coherent Statement of Work</h3>
-                                <p class="body-text text-[15px] text-gray-600 m-0 max-w-[850px]">
-                                    We believe this can be achieved by adopting a structured approach for disruption-readiness, breaking the engagement down into three distinct but highly integrated core phases:
-                                </p>
-                            </div>
+                <div class="slide-content flex-col gap-8">
+                    
+                    <!-- Clean Consulting Header -->
+                    <div class="flex items-center pb-4 border-b border-gray-300 w-full shrink-0">
+                        <div class="w-10 h-10 bg-gray-100 border border-gray-200 rounded-full flex items-center justify-center mr-5 shrink-0">
+                            <i data-lucide="layers" class="w-5 h-5 text-axia-pink"></i>
                         </div>
+                        <p class="body-text text-[16px] text-gray-700 font-medium m-0 leading-relaxed">
+                            The optimal path to disruption-readiness requires a <strong class="text-axia-black font-bold">layered architecture</strong>: foundational readiness supports specific market applications, with AI capability capping the entire structure.
+                        </p>
                     </div>
 
-                    <!-- Bottom Section: 3 Huge Pillars -->
-                    <div class="flex-1 flex gap-6 min-h-0 items-stretch relative">
+                    <!-- Pyramid Framework Layout - STURDY FIXED WIDTHS -->
+                    <div class="flex-1 flex flex-col justify-center w-full max-w-[1050px] mx-auto relative gap-[8px]">
                         
-                        <!-- Pillar 1 -->
-                        <div class="flex-1 bg-gray-900 border border-gray-800 rounded-xl p-8 flex flex-col items-center justify-center text-center relative overflow-hidden border-t-8 border-t-axia-pink">
-                            <div class="absolute -right-4 -bottom-8 text-[160px] font-black text-gray-800 leading-none select-none z-0">1</div>
-                            <div class="bg-gray-800 border border-gray-700 w-20 h-20 rounded-full flex items-center justify-center mb-6 shrink-0 relative z-10 ring-8 ring-gray-800/50">
-                                <i data-lucide="compass" class="w-10 h-10 text-axia-pink"></i>
+                        <!-- Tier 3 (Top) -->
+                        <div class="flex items-center w-full h-[110px]">
+                            <!-- Pyramid Slice (Left Column) -->
+                            <div class="w-[360px] flex justify-center relative h-full shrink-0">
+                                <div class="w-[160px] h-full bg-axia-pink border border-pink-700 rounded-t-xl flex flex-col items-center justify-center relative z-20">
+                                    <i data-lucide="cpu" class="w-7 h-7 text-white mb-2"></i>
+                                    <span class="text-[12px] font-bold text-white uppercase tracking-widest text-center leading-tight">AI<br>Capability</span>
+                                </div>
+                                <!-- Internal Line -->
+                                <div class="absolute right-0 top-1/2 w-[calc(50%-80px)] border-t-[2px] border-dashed border-axia-pink"></div>
                             </div>
-                            <h4 class="text-[20px] font-bold text-white mb-3 relative z-10">Assessing Disruption Readiness</h4>
-                            <p class="text-gray-400 text-[15px] leading-relaxed relative z-10">Evaluating internal capabilities and unlocking leadership instincts to confidently navigate upcoming technological shifts.</p>
-                        </div>
-
-                        <!-- Connector 1 -->
-                        <div class="flex flex-col items-center justify-center shrink-0 w-6">
-                            <i data-lucide="chevron-right" class="w-8 h-8 text-gray-400"></i>
-                        </div>
-
-                        <!-- Pillar 2 -->
-                        <div class="flex-1 bg-gray-900 border border-gray-800 rounded-xl p-8 flex flex-col items-center justify-center text-center relative overflow-hidden border-t-8 border-t-gray-500">
-                            <div class="absolute -right-4 -bottom-8 text-[160px] font-black text-gray-800 leading-none select-none z-0">2</div>
-                            <div class="bg-gray-800 border border-gray-700 w-20 h-20 rounded-full flex items-center justify-center mb-6 shrink-0 relative z-10 ring-8 ring-gray-800/50">
-                                <i data-lucide="search" class="w-10 h-10 text-white"></i>
+                            
+                            <!-- Connector (Middle Column) -->
+                            <div class="flex-1 flex items-center shrink-0 min-w-[50px]">
+                                <div class="w-full border-t-[2px] border-dashed border-axia-pink"></div>
+                                <div class="w-2 h-2 rounded-full bg-axia-pink shrink-0 -ml-[4px]"></div>
                             </div>
-                            <h4 class="text-[20px] font-bold text-white mb-3 relative z-10">Investigating Algorithmic Biases</h4>
-                            <p class="text-gray-400 text-[15px] leading-relaxed relative z-10">Establishing a credible, robust, and evidence-based methodology to analyze and respond to social media content patterns.</p>
-                        </div>
 
-                        <!-- Connector 2 -->
-                        <div class="flex flex-col items-center justify-center shrink-0 w-6">
-                            <i data-lucide="plus" class="w-8 h-8 text-gray-400"></i>
-                        </div>
-
-                        <!-- Pillar 3 -->
-                        <div class="flex-1 bg-gray-900 border border-gray-800 rounded-xl p-8 flex flex-col items-center justify-center text-center relative overflow-hidden border-t-8 border-t-axia-pink">
-                            <div class="absolute -right-4 -bottom-8 text-[160px] font-black text-gray-800 leading-none select-none z-0">3</div>
-                            <div class="bg-gray-800 border border-gray-700 w-20 h-20 rounded-full flex items-center justify-center mb-6 shrink-0 relative z-10 ring-8 ring-gray-800/50">
-                                <i data-lucide="cpu" class="w-10 h-10 text-axia-pink"></i>
+                            <!-- Text Block (Right Column) -->
+                            <div class="w-[500px] pl-8 shrink-0 flex items-center h-full">
+                                <div class="w-full">
+                                    <h4 class="text-[18px] font-bold text-axia-black mb-1 flex items-center">
+                                        <span class="text-axia-pink font-black text-[22px] mr-4">03.</span> Integrating AI Capabilities
+                                    </h4>
+                                    <p class="text-[14px] text-gray-600 leading-relaxed pl-[42px]">The apex of the engagement. Transferring critical technical skills and embedding AI workflows directly into Equi's core operating model.</p>
+                                </div>
                             </div>
-                            <h4 class="text-[20px] font-bold text-white mb-3 relative z-10">Integrating AI Capabilities</h4>
-                            <p class="text-gray-400 text-[15px] leading-relaxed relative z-10">Transferring critical technical skills and embedding new AI workflows directly into Equi's core operating model.</p>
+                        </div>
+
+                        <!-- Tier 2 (Middle) -->
+                        <div class="flex items-center w-full h-[110px]">
+                            <!-- Pyramid Slice -->
+                            <div class="w-[360px] flex justify-center relative h-full shrink-0">
+                                <div class="w-[240px] h-full bg-white border border-gray-300 flex flex-col items-center justify-center relative z-10 border-t-4 border-t-gray-400">
+                                    <i data-lucide="search" class="w-7 h-7 text-gray-600 mb-2"></i>
+                                    <span class="text-[12px] font-bold text-gray-800 uppercase tracking-widest text-center leading-tight">Algorithmic<br>Bias</span>
+                                </div>
+                                <!-- Internal Line -->
+                                <div class="absolute right-0 top-1/2 w-[calc(50%-120px)] border-t-[2px] border-dashed border-gray-400"></div>
+                            </div>
+                            
+                            <!-- Connector -->
+                            <div class="flex-1 flex items-center shrink-0 min-w-[50px]">
+                                <div class="w-full border-t-[2px] border-dashed border-gray-400"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-400 shrink-0 -ml-[4px]"></div>
+                            </div>
+
+                            <!-- Text Block -->
+                            <div class="w-[500px] pl-8 shrink-0 flex items-center h-full">
+                                <div class="w-full">
+                                    <h4 class="text-[18px] font-bold text-axia-black mb-1 flex items-center">
+                                        <span class="text-gray-400 font-black text-[22px] mr-4">02.</span> Investigating Algorithmic Biases
+                                    </h4>
+                                    <p class="text-[14px] text-gray-600 leading-relaxed pl-[42px]">The primary application. Establishing a credible, robust, and evidence-based methodology to analyze and respond to social media content patterns.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tier 1 (Bottom) -->
+                        <div class="flex items-center w-full h-[110px]">
+                            <!-- Pyramid Slice -->
+                            <div class="w-[360px] flex justify-center relative h-full shrink-0">
+                                <div class="w-[320px] h-full bg-gray-900 border border-gray-800 rounded-b-xl flex flex-col items-center justify-center relative z-0 border-b-8 border-b-axia-black">
+                                    <i data-lucide="compass" class="w-8 h-8 text-axia-pink mb-2"></i>
+                                    <span class="text-[13px] font-bold text-white uppercase tracking-widest text-center leading-tight">Disruption<br>Readiness</span>
+                                </div>
+                                <!-- Internal Line -->
+                                <div class="absolute right-0 top-1/2 w-[calc(50%-160px)] border-t-[2px] border-dashed border-gray-600"></div>
+                            </div>
+                            
+                            <!-- Connector -->
+                            <div class="flex-1 flex items-center shrink-0 min-w-[50px]">
+                                <div class="w-full border-t-[2px] border-dashed border-gray-600"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-600 shrink-0 -ml-[4px]"></div>
+                            </div>
+
+                            <!-- Text Block -->
+                            <div class="w-[500px] pl-8 shrink-0 flex items-center h-full">
+                                <div class="w-full">
+                                    <h4 class="text-[18px] font-bold text-axia-black mb-1 flex items-center">
+                                        <span class="text-axia-black font-black text-[22px] mr-4">01.</span> Assessing Disruption Readiness
+                                    </h4>
+                                    <p class="text-[14px] text-gray-600 leading-relaxed pl-[42px]">The core foundation. Evaluating internal capabilities and unlocking leadership instincts to confidently navigate upcoming technological shifts.</p>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
@@ -517,30 +567,76 @@
                         The starting point to understand bias is to distinguish between three distinct factors that can give right-wing or anti-Muslim content greater reach on social media platforms:
                     </p>
 
-                    <div class="flex-1 grid grid-cols-3 gap-6">
-                        <div class="bg-gray-900 border border-gray-800 rounded-xl flex flex-col justify-center p-6 border-t-8 border-t-axia-pink min-w-0">
-                            <i data-lucide="network" class="w-10 h-10 text-axia-pink mb-4 shrink-0"></i>
-                            <h3 class="card-title text-white">1. Inauthentic Coordinated Behaviour</h3>
-                            <p class="body-text text-gray-400">
-                                Organised networks deliberately amplifying content — bots, coordinated inauthentic accounts, manipulation campaigns.
-                            </p>
+                    <div class="flex-1 flex gap-8 min-h-0">
+                        
+                        <!-- Left: Stacked Cards -->
+                        <div class="w-[45%] flex flex-col gap-4">
+                            <div class="bg-gray-900 border border-gray-800 rounded-xl flex-1 flex items-center p-5 border-l-8 border-l-axia-pink min-w-0 shadow-sm">
+                                <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                    <i data-lucide="network" class="w-6 h-6 text-axia-pink"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-[15px] font-bold text-white mb-1">1. Inauthentic Coordinated Behaviour</h3>
+                                    <p class="text-[13px] text-gray-400 leading-relaxed">Organised networks deliberately amplifying content — bots, coordinated inauthentic accounts, manipulation campaigns.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900 border border-gray-800 rounded-xl flex-1 flex items-center p-5 border-l-8 border-l-axia-pink min-w-0 shadow-sm">
+                                <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                    <i data-lucide="git-merge" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-[15px] font-bold text-white mb-1">2. Bias Patterns</h3>
+                                    <p class="text-[13px] text-gray-400 leading-relaxed">Platform architecture that structurally favours certain content types, emotional registers, or ideological framings.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900 border border-gray-800 rounded-xl flex-1 flex items-center p-5 border-l-8 border-l-axia-pink min-w-0 shadow-sm">
+                                <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                    <i data-lucide="users" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-[15px] font-bold text-white mb-1">3. Content Engagement Patterns</h3>
+                                    <p class="text-[13px] text-gray-400 leading-relaxed">Legitimate user behaviour where certain content generates more interaction and is therefore surfaced more widely.</p>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="bg-gray-900 border border-gray-800 rounded-xl flex flex-col justify-center p-6 border-t-8 border-t-axia-pink min-w-0">
-                            <i data-lucide="git-merge" class="w-10 h-10 text-white mb-4 shrink-0"></i>
-                            <h3 class="card-title text-white">2. Bias Patterns</h3>
-                            <p class="body-text text-gray-400">
-                                Platform architecture that structurally favours certain content types, emotional registers, or ideological framings.
-                            </p>
+                        <!-- Right: Dashboard Mockup -->
+                        <div class="w-[55%] bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden flex flex-col">
+                            <!-- Mac-style App Window Header -->
+                            <div class="h-10 border-b border-gray-200 flex items-center px-4 bg-gray-50 shrink-0">
+                                <div class="flex gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-gray-300"></div>
+                                    <div class="w-3 h-3 rounded-full bg-gray-300"></div>
+                                    <div class="w-3 h-3 rounded-full bg-gray-300"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Placeholder Body -->
+                            <div class="flex-1 bg-gray-100 flex items-center justify-center p-8 relative overflow-hidden">
+                                <!-- Abstract Dashboard Elements -->
+                                <div class="absolute inset-0 p-6 flex flex-col gap-4 opacity-50">
+                                    <div class="flex gap-4 h-[30%] shrink-0">
+                                        <div class="flex-1 bg-white rounded-lg shadow-sm"></div>
+                                        <div class="flex-1 bg-white rounded-lg shadow-sm"></div>
+                                        <div class="flex-1 bg-white rounded-lg shadow-sm"></div>
+                                    </div>
+                                    <div class="flex gap-4 flex-1">
+                                        <div class="w-2/3 bg-white rounded-lg shadow-sm"></div>
+                                        <div class="w-1/3 bg-white rounded-lg shadow-sm"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Central Overlay Text -->
+                                <div class="bg-white/90 backdrop-blur-sm border border-gray-200 px-8 py-6 rounded-xl shadow-lg relative z-10 text-center">
+                                    <i data-lucide="bar-chart-2" class="w-10 h-10 text-axia-pink mx-auto mb-3"></i>
+                                    <h4 class="text-[16px] font-bold text-axia-black uppercase tracking-widest">Dashboard Visual</h4>
+                                    <p class="text-[13px] text-gray-500 mt-1">[Insert Screenshot Here]</p>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="bg-gray-900 border border-gray-800 rounded-xl flex flex-col justify-center p-6 border-t-8 border-t-axia-pink min-w-0">
-                            <i data-lucide="users" class="w-10 h-10 text-white mb-4 shrink-0"></i>
-                            <h3 class="card-title text-white">3. Content Engagement Patterns</h3>
-                            <p class="body-text text-gray-400">
-                                Legitimate user behaviour where certain content generates more interaction and is therefore surfaced more widely.
-                            </p>
-                        </div>
                     </div>
                 </div>
                 
@@ -842,8 +938,10 @@
     </div>
 
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+        // Initialize Lucide icons safely (prevents script crash if CDN is blocked/slow)
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
 
         // Slide navigation logic
         let currentSlideIndex = 0;
@@ -879,26 +977,43 @@
             if (e.key === 'ArrowLeft') prevSlide();
         });
 
-        // The mathematically perfect scaling logic using absolute centering
+        // The mathematically perfect scaling logic using absolute centering with fallback
         function resizePresentation() {
             const container = document.getElementById('presentation-container');
             const deck = document.getElementById('deck');
+            if (!container || !deck) return;
             
-            const containerWidth = container.clientWidth;
-            const containerHeight = container.clientHeight;
+            // Failsafe height/width tracking
+            let containerWidth = container.clientWidth || window.innerWidth;
+            let containerHeight = container.clientHeight || (window.innerHeight - 80);
+            
+            // If the iframe returns 0 (happens before initial DOM paint in some previews)
+            // Fall back to literal safe dimensions
+            if (containerWidth === 0) containerWidth = 1000;
+            if (containerHeight === 0) containerHeight = 600;
             
             const scaleX = containerWidth / 1280;
             const scaleY = containerHeight / 720;
             
             // Use exactly 95% of the minimum scale to guarantee padding on all sides
-            const scale = Math.min(scaleX, scaleY) * 0.95; 
+            let scale = Math.min(scaleX, scaleY) * 0.95; 
+            
+            // Final math failsafe: If scale is completely broken or somehow negative, set a flat default
+            if (scale < 0.1 || isNaN(scale)) scale = 0.5;
             
             deck.style.transform = `translate(-50%, -50%) scale(${scale})`;
         }
 
         window.addEventListener('resize', resizePresentation);
+        
+        // Robust resize tracking for iframes
+        if (typeof ResizeObserver !== 'undefined') {
+            new ResizeObserver(resizePresentation).observe(document.body);
+        }
+        
         // Delay slight execution to ensure DOM paints before first scale calculation
-        setTimeout(resizePresentation, 100);
+        setTimeout(resizePresentation, 50);
+        setTimeout(resizePresentation, 500); // Secondary safety trigger
     </script>
 </body>
 </html>
